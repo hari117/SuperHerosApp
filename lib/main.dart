@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'UI.dart';
+import 'package:pickhero/pages/home.dart';
 
-
-void main()
-{
+void main() {
   runApp(Heros());
 }
-
 
 class Heros extends StatefulWidget {
   @override
@@ -16,6 +13,6 @@ class Heros extends StatefulWidget {
 class _HerosState extends State<Heros> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home :UiPart());
+    return MaterialApp(home: HomePage());
   }
 }
