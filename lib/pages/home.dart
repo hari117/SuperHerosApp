@@ -29,17 +29,17 @@ class _HomePageState extends State<HomePage> {
   }
 
   update() {
-    print("checking the loading is $isLoading");
+    // print("checking the loading is $isLoading");
     isLoading = true;
     _superHeroClient.getHeroDetails().then((heroList) {
       isLoading = false;
       total = heroList.length;
 
-      print("checking the loading is $isLoading");
+      //   print("checking the loading is $isLoading");
       setState(() {});
       this.heroList = heroList;
 
-      print("the values are");
+      //    print("the values are");
 
       print("");
     });
@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.indigo,
+      backgroundColor: Colors.black,
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.menu),
@@ -95,18 +95,21 @@ class _HomePageState extends State<HomePage> {
   }
 
   gridView() {
-    return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 3.0,
-        mainAxisSpacing: 3.0,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 0.0,
+          mainAxisSpacing: 20.0,
+        ),
+        itemCount: total,
+        itemBuilder: (_, index) {
+          //  print("builidng item: $index");
+          MyHero hero = heroList[index];
+          return HeroCard(hero);
+        },
       ),
-      itemCount: total,
-      itemBuilder: (_, index) {
-        //  print("builidng item: $index");
-        MyHero hero = heroList[index];
-        return HeroCard(hero);
-      },
     );
   }
 }

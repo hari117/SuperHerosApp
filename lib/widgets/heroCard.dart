@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pickhero/model/loadingImage.dart';
 import 'package:pickhero/model/models.dart';
 import 'package:pickhero/pages/heroDetail.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,56 +15,78 @@ class HeroCard extends StatefulWidget {
 
 class _HeroCardState extends State<HeroCard> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        MaterialPageRoute route = new MaterialPageRoute(
-            builder: (context) => HeroInformationPage(widget.myHero));
-        Navigator.push(context, route);
-      },
-      child: old(),
-    );
+    return old();
   }
 
   Widget old() {
+    return FractionallySizedBox(
+      widthFactor: 0.75,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: InkWell(
+          onTap: () {
+            MaterialPageRoute route = new MaterialPageRoute(
+                builder: (context) => HeroInformationPage(widget.myHero));
+            Navigator.push(context, route);
+          },
+          child: Stack(
+            children: [
+              Positioned.fill(child: heroImage()),
+              heroImageOverlay(),
+              heroName(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget heroImage() {
     return Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(
-        image: NetworkImage(widget.myHero.imageUrl),
-        fit: BoxFit.cover,
-      )),
-      width: MediaQuery.of(context).size.width / 2,
-      height: 200,
-      alignment: Alignment.bottomCenter,
-      child: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                  colors: [
-                    Colors.indigo,
-                    Color(0xaa3F51B5),
-                    Color(0x00000000),
-                    Color(0x00000000),
-                  ],
-                  stops: [
-                    0,
-                    0.2,
-                    0.3,
-                    1
-                  ]),
-              color: Colors.indigo,
-              borderRadius: BorderRadius.circular(2)),
-          width: MediaQuery.of(context).size.width / 2,
-          height: 20,
-          child: Center(
-              child: Text(widget.myHero.name,
-                  style: GoogleFonts.crimsonPro(
-                      fontSize: 20, color: Colors.white)))),
+      child: LoadingImage(widget.myHero.imageUrl),
+    );
+  }
+
+  Widget heroImageOverlay() {
+    return Container(
+      color: Color(0x00000000),
     );
   }
 
   Widget image() {
     return Image.network(widget.myHero.imageUrl);
+  }
+
+  //not hero name
+  Widget heroName() {
+    return Container(
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.bottomCenter,
+            end: Alignment.topCenter,
+            colors: [
+              Colors.indigo,
+              Color(0xaa3F51B5),
+              Color(0x00000000),
+              Color(0x00000000),
+            ],
+            stops: [0, 0.2, 0.7, 1],
+          ),
+          color: Colors.indigo,
+          borderRadius: BorderRadius.circular(1)),
+      height: 20,
+      alignment: Alignment.bottomCenter,
+      child: Text(
+        widget.myHero.name,
+        style: GoogleFonts.crimsonPro(fontSize: 20, color: Colors.white),
+      ),
+    );
   }
 }

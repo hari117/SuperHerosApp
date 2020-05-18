@@ -32,12 +32,14 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
         onDoubleTap: () {
           Navigator.pop(context);
         },
-        child: Column(
-          children: <Widget>[
-            Expanded(
-              child: Stack(
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Stack(
                 children: <Widget>[
                   Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height / 2,
                     // color: Colors.yellow,
                     alignment: Alignment.topCenter,
                     decoration: BoxDecoration(
@@ -47,7 +49,10 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
                     ),
                   ),
                   Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height / 2,
                     decoration: BoxDecoration(
+                      color: Colors.red,
                       gradient: LinearGradient(
                           begin: Alignment.bottomCenter,
                           end: Alignment.topCenter,
@@ -67,374 +72,365 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
                   )
                 ],
               ),
-            ),
-            Expanded(
-              child: Container(
-                color: Colors.indigo,
-                //   child: SingleChildScrollView(),
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  child: SingleChildScrollView(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          allocateheightSize(),
-                          buildTitles("Hero Details"),
+              secondHalfScreen(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
-                          allocateheightSize(),
-                          Container(
-                            width: MediaQuery.of(context).size.width,
+  secondHalfScreen() {
+    return Container(
+      color: Colors.indigo,
+      //   child: SingleChildScrollView(),
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              allocateheightSize(),
+              buildTitles("Hero Details"),
 
-                            //   color: Colors.indigo,
-                            child: Row(
-                              children: <Widget>[
-                                Expanded(
-                                  child: Container(
-                                    //       color: Colors.black,
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        RichText(
-                                          text: TextSpan(
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                text: 'ID :',
-                                                style: textFonts.normalText,
-                                              ),
-                                              TextSpan(
-                                                text: ' ${widget.hero.id} ',
-                                                style: textFonts.normalText,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        allocateheightSize(),
-                                        RichText(
-                                          text: TextSpan(
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                text: 'STREANGTH :',
-                                                style: textFonts.normalText,
-                                              ),
-                                              TextSpan(
-                                                text:
-                                                    ' ${widget.hero.strength} ',
-                                                style: textFonts.normalText,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        allocateheightSize(),
-                                        RichText(
-                                          text: TextSpan(
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                text: 'POWER :',
-                                                style: textFonts.normalText,
-                                              ),
-                                              TextSpan(
-                                                text: ' ${widget.hero.power} ',
-                                                style: textFonts.normalText,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        allocateheightSize(),
-                                        RichText(
-                                          text: TextSpan(
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                text: 'intelligence :',
-                                                style: textFonts.normalText,
-                                              ),
-                                              TextSpan(
-                                                text:
-                                                    ' ${widget.hero.intelligence} ',
-                                                style: textFonts.normalText,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        allocateheightSize(),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Container(
-                                    //      color: Colors.black,
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        RichText(
-                                          text: TextSpan(
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                text: 'NAME :',
-                                                style: textFonts.normalText,
-                                              ),
-                                              TextSpan(
-                                                text: ' ${widget.hero.name} ',
-                                                style: textFonts.normalText,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        allocateheightSize(),
-                                        RichText(
-                                          text: TextSpan(
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                text: 'SPEED :',
-                                                style: textFonts.normalText,
-                                              ),
-                                              TextSpan(
-                                                text: ' ${widget.hero.speed} ',
-                                                style: textFonts.normalText,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        allocateheightSize(),
-                                        RichText(
-                                          text: TextSpan(
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                text: 'COMBAT :',
-                                                style: textFonts.normalText,
-                                              ),
-                                              TextSpan(
-                                                text: ' ${widget.hero.combat} ',
-                                                style: textFonts.normalText,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        allocateheightSize(),
-                                        RichText(
-                                          text: TextSpan(
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                text: 'DURABILITY :',
-                                                style: textFonts.normalText,
-                                              ),
-                                              TextSpan(
-                                                text:
-                                                    ' ${widget.hero.durability} ',
-                                                style: textFonts.normalText,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          buildTitles("Appearance"),
-                          allocateheightSize(),
-                          //appearance
-                          Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: 109,
-                            //   color: Colors.black,
-                            child: Row(
-                              children: <Widget>[
-                                Expanded(
-                                  child: Container(
-                                    //     color: Colors.black,
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        RichText(
-                                          text: TextSpan(
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                text: 'GENDER :',
-                                                style: textFonts.normalText,
-                                              ),
-                                              TextSpan(
-                                                text: ' ${widget.hero.gender} ',
-                                                style: textFonts.normalText,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        allocateheightSize(),
-                                        RichText(
-                                          text: TextSpan(
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                text: 'EYECOLOR :',
-                                                style: textFonts.normalText,
-                                              ),
-                                              TextSpan(
-                                                text:
-                                                    ' ${widget.hero.eyeColor} ',
-                                                style: textFonts.normalText,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        allocateheightSize(),
-                                        RichText(
-                                          text: TextSpan(
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                text: 'HAIRCOLOR :',
-                                                style: textFonts.normalText,
-                                              ),
-                                              TextSpan(
-                                                text:
-                                                    ' ${widget.hero.hairColor} ',
-                                                style: textFonts.normalText,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Container(
-                                    //    color: Colors.black,
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        RichText(
-                                          text: TextSpan(
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                text: 'HEIGHT :',
-                                                style: textFonts.normalText,
-                                              ),
-                                              TextSpan(
-                                                text: ' ${widget.hero.height} ',
-                                                style: textFonts.normalText,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        allocateheightSize(),
-                                        RichText(
-                                          text: TextSpan(
-                                            children: <TextSpan>[
-                                              TextSpan(
-                                                text: 'WEIGHT :',
-                                                style: textFonts.normalText,
-                                              ),
-                                              TextSpan(
-                                                text: ' ${widget.hero.weight} ',
-                                                style: textFonts.normalText,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        allocateheightSize(),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          buildTitles("BIOGRAPHY"),
-                          allocateheightSize(),
-                          RichText(
-                            text: TextSpan(
-                              children: <TextSpan>[
-                                TextSpan(
-                                  text: 'FULLNAME :',
-                                  style: textFonts.normalText,
-                                ),
-                                TextSpan(
-                                  text: ' ${widget.hero.fullName} ',
-                                  style: textFonts.normalText,
-                                ),
-                              ],
-                            ),
-                          ),
-                          allocateheightSize(),
-                          RichText(
-                            text: TextSpan(
-                              children: <TextSpan>[
-                                TextSpan(
-                                  text: 'FIRSTAPPEARANCE :',
-                                  style: textFonts.normalText,
-                                ),
-                                TextSpan(
-                                  text: ' ${widget.hero.fristapper} ',
-                                  style: textFonts.normalText,
-                                ),
-                              ],
-                            ),
-                          ),
-                          allocateheightSize(),
-                          RichText(
-                            text: TextSpan(
-                              children: <TextSpan>[
-                                TextSpan(
-                                  text: 'PUBLISHER :',
-                                  style: textFonts.normalText,
-                                ),
-                                TextSpan(
-                                  text: ' ${widget.hero.publisher} ',
-                                  style: textFonts.normalText,
-                                ),
-                              ],
-                            ),
-                          ),
-                          allocateheightSize(),
-                          buildTitles("CONNECTIONS"),
+              allocateheightSize(),
+              Container(
+                width: MediaQuery.of(context).size.width,
 
-                          allocateheightSize(),
-                          RichText(
-                            text: TextSpan(
-                              children: <TextSpan>[
-                                TextSpan(
-                                  text: 'GROUP AFFILIATION :',
-                                  style: textFonts.normalText,
-                                ),
-                                TextSpan(
-                                  text: ' ${widget.hero.groupAffiliation} ',
-                                  style: textFonts.normalText,
-                                ),
-                              ],
+                //   color: Colors.indigo,
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Container(
+                        //       color: Colors.black,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            RichText(
+                              text: TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: 'ID :',
+                                    style: textFonts.normalText,
+                                  ),
+                                  TextSpan(
+                                    text: ' ${widget.hero.id} ',
+                                    style: textFonts.normalText,
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                          allocateheightSize(),
-                          RichText(
-                            text: TextSpan(
-                              children: <TextSpan>[
-                                TextSpan(
-                                  text: 'RELATIVES :',
-                                  style: textFonts.normalText,
-                                ),
-                                TextSpan(
-                                  text: ' ${widget.hero.relatives} ',
-                                  style: textFonts.normalText,
-                                ),
-                              ],
+                            allocateheightSize(),
+                            RichText(
+                              text: TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: 'STREANGTH :',
+                                    style: textFonts.normalText,
+                                  ),
+                                  TextSpan(
+                                    text: ' ${widget.hero.strength} ',
+                                    style: textFonts.normalText,
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                          allocateheightSize(),
-                        ],
+                            allocateheightSize(),
+                            RichText(
+                              text: TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: 'POWER :',
+                                    style: textFonts.normalText,
+                                  ),
+                                  TextSpan(
+                                    text: ' ${widget.hero.power} ',
+                                    style: textFonts.normalText,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            allocateheightSize(),
+                            RichText(
+                              text: TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: 'intelligence :',
+                                    style: textFonts.normalText,
+                                  ),
+                                  TextSpan(
+                                    text: ' ${widget.hero.intelligence} ',
+                                    style: textFonts.normalText,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            allocateheightSize(),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
+                    Expanded(
+                      child: Container(
+                        //      color: Colors.black,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            RichText(
+                              text: TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: 'NAME :',
+                                    style: textFonts.normalText,
+                                  ),
+                                  TextSpan(
+                                    text: ' ${widget.hero.name} ',
+                                    style: textFonts.normalText,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            allocateheightSize(),
+                            RichText(
+                              text: TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: 'SPEED :',
+                                    style: textFonts.normalText,
+                                  ),
+                                  TextSpan(
+                                    text: ' ${widget.hero.speed} ',
+                                    style: textFonts.normalText,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            allocateheightSize(),
+                            RichText(
+                              text: TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: 'COMBAT :',
+                                    style: textFonts.normalText,
+                                  ),
+                                  TextSpan(
+                                    text: ' ${widget.hero.combat} ',
+                                    style: textFonts.normalText,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            allocateheightSize(),
+                            RichText(
+                              text: TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: 'DURABILITY :',
+                                    style: textFonts.normalText,
+                                  ),
+                                  TextSpan(
+                                    text: ' ${widget.hero.durability} ',
+                                    style: textFonts.normalText,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ),
-          ],
+              buildTitles("Appearance"),
+              allocateheightSize(),
+              //appearance
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 109,
+                //   color: Colors.black,
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Container(
+                        //     color: Colors.black,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            RichText(
+                              text: TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: 'GENDER :',
+                                    style: textFonts.normalText,
+                                  ),
+                                  TextSpan(
+                                    text: ' ${widget.hero.gender} ',
+                                    style: textFonts.normalText,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            allocateheightSize(),
+                            RichText(
+                              text: TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: 'EYECOLOR :',
+                                    style: textFonts.normalText,
+                                  ),
+                                  TextSpan(
+                                    text: ' ${widget.hero.eyeColor} ',
+                                    style: textFonts.normalText,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            allocateheightSize(),
+                            RichText(
+                              text: TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: 'HAIRCOLOR :',
+                                    style: textFonts.normalText,
+                                  ),
+                                  TextSpan(
+                                    text: ' ${widget.hero.hairColor} ',
+                                    style: textFonts.normalText,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        //    color: Colors.black,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            RichText(
+                              text: TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: 'HEIGHT :',
+                                    style: textFonts.normalText,
+                                  ),
+                                  TextSpan(
+                                    text: ' ${widget.hero.height} ',
+                                    style: textFonts.normalText,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            allocateheightSize(),
+                            RichText(
+                              text: TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: 'WEIGHT :',
+                                    style: textFonts.normalText,
+                                  ),
+                                  TextSpan(
+                                    text: ' ${widget.hero.weight} ',
+                                    style: textFonts.normalText,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            allocateheightSize(),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              buildTitles("BIOGRAPHY"),
+              allocateheightSize(),
+              RichText(
+                text: TextSpan(
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: 'FULLNAME :',
+                      style: textFonts.normalText,
+                    ),
+                    TextSpan(
+                      text: ' ${widget.hero.fullName} ',
+                      style: textFonts.normalText,
+                    ),
+                  ],
+                ),
+              ),
+              allocateheightSize(),
+              RichText(
+                text: TextSpan(
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: 'FIRSTAPPEARANCE :',
+                      style: textFonts.normalText,
+                    ),
+                    TextSpan(
+                      text: ' ${widget.hero.fristapper} ',
+                      style: textFonts.normalText,
+                    ),
+                  ],
+                ),
+              ),
+              allocateheightSize(),
+              RichText(
+                text: TextSpan(
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: 'PUBLISHER :',
+                      style: textFonts.normalText,
+                    ),
+                    TextSpan(
+                      text: ' ${widget.hero.publisher} ',
+                      style: textFonts.normalText,
+                    ),
+                  ],
+                ),
+              ),
+              allocateheightSize(),
+              buildTitles("CONNECTIONS"),
+
+              allocateheightSize(),
+              RichText(
+                text: TextSpan(
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: 'GROUP AFFILIATION :',
+                      style: textFonts.normalText,
+                    ),
+                    TextSpan(
+                      text: ' ${widget.hero.groupAffiliation} ',
+                      style: textFonts.normalText,
+                    ),
+                  ],
+                ),
+              ),
+              allocateheightSize(),
+              RichText(
+                text: TextSpan(
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: 'RELATIVES :',
+                      style: textFonts.normalText,
+                    ),
+                    TextSpan(
+                      text: ' ${widget.hero.relatives} ',
+                      style: textFonts.normalText,
+                    ),
+                  ],
+                ),
+              ),
+              allocateheightSize(),
+            ],
+          ),
         ),
       ),
     );
