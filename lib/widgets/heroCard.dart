@@ -38,6 +38,9 @@ class _HeroCardState extends State<HeroCard> {
           },
           child: Stack(
             children: [
+              Container(
+                color: Colors.red,
+              ),
               Positioned.fill(child: heroImage()),
               heroImageOverlay(),
               heroName(),
@@ -77,7 +80,7 @@ class _HeroCardState extends State<HeroCard> {
               Color(0x00000000),
               Color(0x00000000),
             ],
-            stops: [0, 0.2, 0.7, 1],
+            stops: [0, 0.5, 0.7, 1],
           ),
           color: Colors.indigo,
           borderRadius: BorderRadius.circular(1)),
