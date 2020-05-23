@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisSpacing: 0.0,
           mainAxisSpacing: 20.0,
         ),
-        itemCount: 1,
+        itemCount: total,
         itemBuilder: (_, index) {
           //  print("builidng item: $index");
           MyHero hero = heroList[index];
