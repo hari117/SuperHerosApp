@@ -26,6 +26,8 @@ class SuperHeroClient {
 
       List<MyHero> heros = MyHero.fromJson(listOfMap);
       return heros;
+    }).catchError((error) {
+      return Future.error(error);
     });
 
     return finalData;

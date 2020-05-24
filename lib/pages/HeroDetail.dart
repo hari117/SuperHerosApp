@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:pickhero/model/fontFile.dart';
 import 'package:pickhero/model/models.dart';
 
@@ -15,15 +14,13 @@ class HeroInformationPage extends StatefulWidget {
 }
 
 class _HeroInformationPageState extends State<HeroInformationPage> {
-  TextFonts textFonts = TextFonts();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
           "${widget.hero.name}",
-          style: textFonts.headingText,
+          style: TextFonts.headingText,
         ),
         backgroundColor: Colors.indigo,
         centerTitle: true,
@@ -112,11 +109,11 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
                                 children: <TextSpan>[
                                   TextSpan(
                                     text: 'ID :',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                   TextSpan(
                                     text: ' ${widget.hero.id} ',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                 ],
                               ),
@@ -127,11 +124,11 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
                                 children: <TextSpan>[
                                   TextSpan(
                                     text: 'STREANGTH :',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                   TextSpan(
                                     text: ' ${widget.hero.strength} ',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                 ],
                               ),
@@ -142,11 +139,11 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
                                 children: <TextSpan>[
                                   TextSpan(
                                     text: 'POWER :',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                   TextSpan(
                                     text: ' ${widget.hero.power} ',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                 ],
                               ),
@@ -157,11 +154,11 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
                                 children: <TextSpan>[
                                   TextSpan(
                                     text: 'intelligence :',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                   TextSpan(
                                     text: ' ${widget.hero.intelligence} ',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                 ],
                               ),
@@ -182,11 +179,11 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
                                 children: <TextSpan>[
                                   TextSpan(
                                     text: 'NAME :',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                   TextSpan(
                                     text: ' ${widget.hero.name} ',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                 ],
                               ),
@@ -197,11 +194,11 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
                                 children: <TextSpan>[
                                   TextSpan(
                                     text: 'SPEED :',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                   TextSpan(
                                     text: ' ${widget.hero.speed} ',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                 ],
                               ),
@@ -212,11 +209,11 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
                                 children: <TextSpan>[
                                   TextSpan(
                                     text: 'COMBAT :',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                   TextSpan(
                                     text: ' ${widget.hero.combat} ',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                 ],
                               ),
@@ -227,11 +224,11 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
                                 children: <TextSpan>[
                                   TextSpan(
                                     text: 'DURABILITY :',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                   TextSpan(
                                     text: ' ${widget.hero.durability} ',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                 ],
                               ),
@@ -263,11 +260,11 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
                                 children: <TextSpan>[
                                   TextSpan(
                                     text: 'GENDER :',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                   TextSpan(
                                     text: ' ${widget.hero.gender} ',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                 ],
                               ),
@@ -278,11 +275,11 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
                                 children: <TextSpan>[
                                   TextSpan(
                                     text: 'EYECOLOR :',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                   TextSpan(
                                     text: ' ${widget.hero.eyeColor} ',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                 ],
                               ),
@@ -293,11 +290,11 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
                                 children: <TextSpan>[
                                   TextSpan(
                                     text: 'HAIRCOLOR :',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                   TextSpan(
                                     text: ' ${widget.hero.hairColor} ',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                 ],
                               ),
@@ -317,11 +314,11 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
                                 children: <TextSpan>[
                                   TextSpan(
                                     text: 'HEIGHT :',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                   TextSpan(
                                     text: ' ${widget.hero.height} ',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                 ],
                               ),
@@ -332,11 +329,11 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
                                 children: <TextSpan>[
                                   TextSpan(
                                     text: 'WEIGHT :',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                   TextSpan(
                                     text: ' ${widget.hero.weight} ',
-                                    style: textFonts.normalText,
+                                    style: TextFonts.normalText,
                                   ),
                                 ],
                               ),
@@ -356,11 +353,11 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
                   children: <TextSpan>[
                     TextSpan(
                       text: 'FULLNAME :',
-                      style: textFonts.normalText,
+                      style: TextFonts.normalText,
                     ),
                     TextSpan(
                       text: ' ${widget.hero.fullName} ',
-                      style: textFonts.normalText,
+                      style: TextFonts.normalText,
                     ),
                   ],
                 ),
@@ -371,11 +368,11 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
                   children: <TextSpan>[
                     TextSpan(
                       text: 'FIRSTAPPEARANCE :',
-                      style: textFonts.normalText,
+                      style: TextFonts.normalText,
                     ),
                     TextSpan(
                       text: ' ${widget.hero.fristapper} ',
-                      style: textFonts.normalText,
+                      style: TextFonts.normalText,
                     ),
                   ],
                 ),
@@ -386,11 +383,11 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
                   children: <TextSpan>[
                     TextSpan(
                       text: 'PUBLISHER :',
-                      style: textFonts.normalText,
+                      style: TextFonts.normalText,
                     ),
                     TextSpan(
                       text: ' ${widget.hero.publisher} ',
-                      style: textFonts.normalText,
+                      style: TextFonts.normalText,
                     ),
                   ],
                 ),
@@ -404,11 +401,11 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
                   children: <TextSpan>[
                     TextSpan(
                       text: 'GROUP AFFILIATION :',
-                      style: textFonts.normalText,
+                      style: TextFonts.normalText,
                     ),
                     TextSpan(
                       text: ' ${widget.hero.groupAffiliation} ',
-                      style: textFonts.normalText,
+                      style: TextFonts.normalText,
                     ),
                   ],
                 ),
@@ -417,14 +414,8 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
               RichText(
                 text: TextSpan(
                   children: <TextSpan>[
-                    TextSpan(
-                      text: 'RELATIVES :',
-                      style: textFonts.normalText,
-                    ),
-                    TextSpan(
-                      text: ' ${widget.hero.relatives} ',
-                      style: textFonts.normalText,
-                    ),
+                    textSpan('RELATIVES :'),
+                    textSpan(' ${widget.hero.relatives} ')
                   ],
                 ),
               ),
@@ -443,7 +434,14 @@ class _HeroInformationPageState extends State<HeroInformationPage> {
   buildTitles(String Name) {
     return Text(
       "$Name",
-      style: textFonts.headingText,
+      style: TextFonts.headingText,
+    );
+  }
+
+  TextSpan textSpan(String text) {
+    return TextSpan(
+      text: text,
+      style: TextFonts.normalText,
     );
   }
 }

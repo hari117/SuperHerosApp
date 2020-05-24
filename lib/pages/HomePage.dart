@@ -3,8 +3,7 @@ import 'package:loading/indicator/ball_pulse_indicator.dart';
 import 'package:pickhero/client/SuperHeroClient.dart';
 import 'package:pickhero/model/models.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pickhero/widgets/heroCard.dart';
-import 'package:pickhero/widgets/heroCardNew.dart';
+import 'package:pickhero/widgets/HeroCard.dart';
 import 'package:random_color/random_color.dart';
 import 'package:loading/loading.dart';
 
@@ -18,32 +17,24 @@ class _HomePageState extends State<HomePage> {
   RandomColor _randomColor = RandomColor();
   List<MyHero> heroList;
   bool isLoading = true;
-
+  bool isError;
   int total;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     setState(() {});
     update();
   }
 
   update() {
-    // print("checking the loading is $isLoading");
     isLoading = true;
     _superHeroClient.getHeroDetails().then((heroList) {
       isLoading = false;
       total = heroList.length;
-
-      //   print("checking the loading is $isLoading");
       setState(() {});
       this.heroList = heroList;
-
-      //    print("the values are");
-
-      print("");
-    });
+    }).catchError((onError) {});
     setState(() {});
   }
 
@@ -108,7 +99,7 @@ class _HomePageState extends State<HomePage> {
         itemBuilder: (_, index) {
           //  print("builidng item: $index");
           MyHero hero = heroList[index];
-          return HeroCardNew(hero);
+          return HeroCard(hero);
         },
       ),
     );

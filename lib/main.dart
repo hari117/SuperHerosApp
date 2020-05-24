@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pickhero/pages/home.dart';
+import 'package:pickhero/pages/HomePage.dart';
 
 void main() {
-  runApp(Heros());
+  runApp(HeroApp());
 }
 
-class Heros extends StatefulWidget {
-  @override
-  _HerosState createState() => _HerosState();
-}
-
-class _HerosState extends State<Heros> {
+class HeroApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(home: HomePage());
