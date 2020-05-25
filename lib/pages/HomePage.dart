@@ -4,7 +4,6 @@ import 'package:pickhero/client/SuperHeroClient.dart';
 import 'package:pickhero/model/models.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pickhero/widgets/HeroCard.dart';
-import 'package:random_color/random_color.dart';
 import 'package:loading/loading.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,7 +13,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   SuperHeroClient _superHeroClient = SuperHeroClient();
-  RandomColor _randomColor = RandomColor();
   List<MyHero> heroList;
   bool isLoading = true;
   bool isError;
@@ -34,7 +32,10 @@ class _HomePageState extends State<HomePage> {
       total = heroList.length;
       setState(() {});
       this.heroList = heroList;
-    }).catchError((onError) {});
+    }).catchError((onError) {
+      isError = true;
+      setState(() {});
+    });
     setState(() {});
   }
 
@@ -72,7 +73,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   checkData() {
-    if (isLoading == true)
+    if (isLoading == true) {
       return Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
@@ -83,7 +84,9 @@ class _HomePageState extends State<HomePage> {
               color: Colors.white),
         ),
       );
-    if (isLoading == false) return gridView();
+    } else {
+      return gridView();
+    }
   }
 
   gridView() {
